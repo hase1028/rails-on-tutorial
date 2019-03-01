@@ -1,2 +1,13 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<%= provide(:title,"Webアクアリウム") %>
+<div class="photo_area"></div>
+  <div class="container" >
+      <div class="item_login">
+        <%= link_to "ログイン",'#'%>
+      </div>
+          <div class="item_new">
+            <%= link_to "新規登録",'#' %>
+          </div>
+            <div class="item_title">
+              <h1>Web Aquarium.</h1>
+            </div>
+    </div>
