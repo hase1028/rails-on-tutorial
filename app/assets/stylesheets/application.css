@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
- /*　@import "bootstrap-sprockets";　*/
- /*　@import "bootstrap";　*/
+ /*　@import "bootstrap-sprockets";　
+ @import "bootstrap";
 
 body {
   margin: 0;
@@ -32,7 +32,11 @@ body {
   z-index: -1;
 }
 
-.container {
+/*.container {
+
+}*/
+
+/*.container {
   display: grid;　
   grid-template-columns: 1fr 2fr 7em 7em;
   grid-template-rows: 80px 550px;
@@ -48,7 +52,7 @@ a  {
   color: #f5f5f5;
 }
 
-.item_login {
+/*.item_login {
   grid-column: 3/4;
   text-align: center;
 }
@@ -64,4 +68,4 @@ a  {
   font-size: 20px;
   text-align: center;
   letter-spacing: 10px;
-}
+}*/
