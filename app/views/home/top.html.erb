@@ -1,17 +1,38 @@
 <%= provide(:title,"Webアクアリウム") %>
 <div class="photo_area"></div>
-  <div class="container">
-    <div class="row apptitle">
-      <div class="col-sm-6 apptitle-left">Web</div>
-      <div class="col-sm-6 apptitle-right">aquarium</div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <%= link_to "Web Aquarium.",'#', :style => "font-family: 'Amatic SC', cursive", :class => "link"%>
+      </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6"></div>
+              <div class="col-md-3 text-center">
+                <%= link_to "Login",'#', :style => "font-family: 'Amatic SC', cursive", :class => "link"%>
+              </div>
+                <div class="col-md-3 text-center">
+                  <%= link_to "sign up",'#', :style => "font-family: 'Amatic SC', cursive", :class => "link"%>
+                </div>
+          </div>
+        </div>
     </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text-center">
+          <h1 class="special-text title">Web Aquarium.</h1>
+          <p class="default-text">水族館を、みんなで共有しよう。</p>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
   </div>
 
   <!-- <div class="item_login">
-      <%= link_to "Login",'#', :style => "font-family: 'Amatic SC', cursive"%>
+
     </div>
         <div class="item_new">
-          <%= link_to "sign up",'#', :style => "font-family: 'Amatic SC', cursive" %>
+
         </div>
           <div class="item_title">
             <h1>Web Aquarium.</h1>
