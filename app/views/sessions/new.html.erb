@@ -1,9 +1,9 @@
-<%= provide(:title,"新規登録") %>
+<% provide(:title, "ログイン") %>
 <div class="photo_area"></div>
   <div class="container-fluid">
     <div class="row signup">
-      <div class="col-md-6 special-text">
-        <h1>Sign up</h1>
+      <div class="col-md-6 special-text ">
+        <h1>Login</h1>
       </div>
         <div class="col-md-6">
           <div class="row signup">
@@ -12,38 +12,33 @@
                 <%= link_to "Home",'/',:style => "font-family: 'Amatic SC', cursive", :class => "link" %>
               </div>
                 <div class="col-md-4 text-right">
-                  <%= link_to "Login",'/login',:style => "font-family: 'Amatic SC', cursive", :class => "link" %>
+                  <%= link_to "Signup",'/signup',:style => "font-family: 'Amatic SC', cursive", :class => "link" %>
                 </div>
           </div>
         </div>
     </div>
       <div class="row form space">
         <div class="col-md-4">
-          <% if @user.errors.full_messages %>
-            <% @user.errors.full_messages.each do |msg| %>
-              <div class="alert alert-danger flash-text">
-                <%= msg %>
-              </div>
-            <% end %>
+          <% if flash.now[:danger]  %>
+            <div class="alert alert-danger flash-text">
+              <%= flash.now[:danger] %>
+            </div>
           <% end %>
         </div>
           <div class="col-md-4 text-center">
-            <%= form_for(@user, url: signup_path) do |f| %>
+            <%= form_for(:session, url: login_path) do |f| %>
 
-              <div>Name</div>
-              <%= f.text_field :name, class: 'form-control', :placeholder => "ユーザーネーム" %>
-
-              <div>Email</div>
+              <%= f.label :email %>
               <%= f.email_field :email, class: 'form-control', :placeholder => "メールアドレス" %>
 
-              <div>Password</div>
+              <%= f.label :password %>
               <%= f.password_field :password, class: 'form-control', :placeholder => "パスワード" %>
 
-              <%= f.submit "登録する", class: "btn btn-primary" %>
+              <%= f.submit "ログイン", class: "btn btn-primary" %>
             <% end %>
-            <div class="flash-text mini-space">
-              <p>アカウントをすでにお持ちですか？<%= link_to "ログイン", login_path %></p>
-            </div>
+              <div class="flash-text space">
+                <p>アカウントをお持ちでないですか？<%= link_to "登録する", signup_path %></p>
+              </div>
           </div>
             <div class="col-md-4"></div>
       </div>

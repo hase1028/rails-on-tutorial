@@ -1,0 +1,58 @@
+<% provide(:title, @user.name) %>
+<div class="photo_area"></div>
+  <div class="container-fluid">
+    <div class="row signup" style="position:fixed; width:100%;">
+      <div class="col-md-6 header">
+        <div class="special-text link padding-side">
+          <p style="margin:auto;">Web Aquarium.</p>
+        </div>
+      </div>
+        <div class="col-md-6 header">
+        <div class="text-right padding-side">
+            <ul style="list-style:none;">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle special-text link" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu text-center">
+                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Settings", '#' %></li>
+                <li class="divider text-center"></li>
+                  <li>
+                    <%= link_to "Log out", logout_path, method: :delete %>
+                  </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+      <div class="row signup">
+        <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <% if flash[:signup_success] %>
+              <div class="alert alert-success flash-text">
+                <%= flash[:signup_success] %>
+              </div>
+            <% end %>
+          </div>
+        <div class="col-md-4"></div>
+      </div>
+        <div class="row home">
+          <div class="col-md-2"></div>
+            <div class="col-md-2 text-center">
+              <%= gravatar_for @user %>
+            </div>
+              <div class="col-md-4 text-center">
+                <h1 class="logo-text"><%= @user.name %></h1>
+                  <h4><%= @user.email %></h4>
+              </div>
+        </div>
+          <div class="row signup bg-light">
+            <div class="col-md-2"></div>
+              <div class="col-md-1"></div>
+                <div class="col-md-1">
+                  <%= link_to "投稿",'#', :class => "link" %>
+                </div>
+          </div>
+    </div>
