@@ -35,6 +35,11 @@
               <%= f.password_field :password, class: 'form-control', :placeholder => "パスワード" %>
 
               <%= f.submit "ログイン", class: "btn btn-primary" %>
+
+              <%= f.label :remember_me, class: "text-right" do %>
+                <%= f.check_box :remember_me %>
+                <span class="flash-text">保存する</span>
+              <% end %>
             <% end %>
               <div class="flash-text space">
                 <p>アカウントをお持ちでないですか？<%= link_to "登録する", signup_path %></p>

@@ -74,9 +74,13 @@ class UserTest < ActiveSupport::TestCase
                                         email: "user@example.com",
                                         password:              "password",
                                         password_confirmation: "password" } }
-   end
+  end
    follow_redirect!
    assert_template 'users/show'
    assert is_logged_in?
- end
+  end
+
+    test "authenticated? should return false for a user with nil digest" do
+      assert_not @user.authenticated?('')
+    end
 end
