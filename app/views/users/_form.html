@@ -1,0 +1,25 @@
+<!-- newとeditのパーシャル：ビューで表示すると文字列になってしまうので保留中 -->
+<%= form_for(@user, url: yield(:url)) do |f| %>
+
+  <div>Name</div>
+  <%= f.text_field :name, class: 'form-control', :placeholder => "ユーザーネーム" %>
+
+  <div>Email</div>
+  <%= f.email_field :email, class: 'form-control', :placeholder => "メールアドレス" %>
+
+  <div>Password</div>
+  <%= f.password_field :password, class: 'form-control', :placeholder => "パスワード" %>
+
+<%= f.submit yield(:button_text), class: "btn btn-primary" %>
+
+<!-- newとeditのパーシャル：呼び出し用 -->
+  <%= render 'form' %>
+
+<!-- carrierwaveユーザー画像：リサイズできないので、とりあえずgravatar使用中 -->
+<%= form_for(@user) do |f| %>
+  <% if @user.image? %>
+    <%= image_tag @user.image.url %>
+  <% else %>
+    <%= image_tag("/assets/default.jpg") %>
+  <% end %>
+    <% f.file_field :image %

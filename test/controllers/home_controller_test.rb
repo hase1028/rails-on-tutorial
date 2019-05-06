@@ -7,7 +7,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
   #end
 
   test "should get top" do
-    get home_top_url
+    get root_url
     assert_response :success
     #assert_select "title","#{@title}"
     assert_select "title","Webアクアリウム"

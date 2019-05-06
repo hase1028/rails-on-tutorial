@@ -1,31 +1,12 @@
 <% provide(:title, @user.name) %>
 <div class="photo_area"></div>
   <div class="container-fluid">
-    <div class="row signup" style="position:fixed; width:100%;">
-      <div class="col-md-6 header">
-        <div class="special-text link padding-side">
-          <p style="margin:auto;">Web Aquarium.</p>
+    <div class="row signup" width:100%;">
+      <div class="col-md-12 header">
+        <div class="row">
+          <%= render 'layouts/header' %>
         </div>
       </div>
-        <div class="col-md-6 header">
-        <div class="text-right padding-side">
-            <ul style="list-style:none;">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle special-text link" data-toggle="dropdown">
-                Account <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu text-center">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", '#' %></li>
-                <li class="divider text-center"></li>
-                  <li>
-                    <%= link_to "Log out", logout_path, method: :delete %>
-                  </li>
-              </ul>
-            </li>
-            </ul>
-        </div>
-        </div>
     </div>
       <div class="row signup">
         <div class="col-md-4"></div>
@@ -55,4 +36,4 @@
                   <%= link_to "投稿",'#', :class => "link" %>
                 </div>
           </div>
-    </div>
+  </div>
