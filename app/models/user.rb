@@ -7,7 +7,7 @@ class User < ApplicationRecord
     format: { with: VALID_EMAIL_REGEX },
     uniqueness:  { case_sensitive: false }      #大文字小文字を区別しない(false)に設定する　このオプションには通常のuniquenessはtrueと判断する
   has_secure_password
-   validates :password, presence: true, length: { minimum: 6 }
+   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
    mount_uploader :image, ImageUploader
 

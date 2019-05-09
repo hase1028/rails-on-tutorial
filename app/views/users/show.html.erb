@@ -1,19 +1,18 @@
 <% provide(:title, @user.name) %>
 <div class="photo_area"></div>
   <div class="container-fluid">
-    <div class="row signup" width:100%;">
-      <div class="col-md-12 header">
-        <div class="row">
-          <%= render 'layouts/header' %>
-        </div>
-      </div>
-    </div>
+    <%= render 'layouts/header' %>
       <div class="row signup">
         <div class="col-md-4"></div>
           <div class="col-md-4">
             <% if flash[:signup_success] %>
               <div class="alert alert-success flash-text">
                 <%= flash[:signup_success] %>
+              </div>
+            <% end %>
+            <% if flash[:success] %>
+              <div class="alert alert-success flash-text">
+                <%= flash[:success] %>
               </div>
             <% end %>
           </div>

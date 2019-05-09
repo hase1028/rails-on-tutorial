@@ -1,37 +1,36 @@
 <% provide(:title, "プロフィールを編集") %>
 <div class="photo_area"></div>
   <div class="container-fluid">
-    <div class="row signup"></div>
       <%= render 'layouts/header' %>
-          <div class="row home">
-            <div class="col-md-4">
+          <div class="row form space">
+            <div class="col-md-4 text-center">
               <div class="gravatar_edit">
                 <%= gravatar_for @user %>
                 <a href="http://gravatar.com/emails" target="_blank">change</a>
               </div>
-                <div class="col-md-4">
-                  <%= form_for(@user) do |f| %>
-                    <div>Name</div>
-                      <%= f.text_field :name, class: 'form-control', :placeholder => "ユーザーネーム" %>
-
-                    <div>Email</div>
-                      <%= f.email_field :email, class: 'form-control', :placeholder => "メールアドレス" %>
-
-                    <div>Password</div>
-                      <%= f.password_field :password, class: 'form-control', :placeholder => "パスワード" %>
-
-
-                      <%= f.submit 'プロフィール編集を完了する',class:'btn btn-primary' %>
-                    <% end %>
-                </div>
-                  <div class="col-md-4">
-                    <% if @user.errors.full_messages %>
-                      <% @user.errors.full_messages.each do |msg| %>
-                        <div class="alert alert-danger flash-text">
-                          <%= msg %>
-                        </div>
-                      <% end %>
-                    <% end %>
-                  </div>
             </div>
-          </div>
+              <div class="col-md-4 text-center">
+                <%= form_for(@user) do |f| %>
+                  <div>Name</div>
+                    <%= f.text_field :name, class: 'form-control', :placeholder => "ユーザーネーム" %>
+
+                  <div>Email</div>
+                    <%= f.email_field :email, class: 'form-control', :placeholder => "メールアドレス" %>
+
+                  <div>Password</div>
+                    <%= f.password_field :password, class: 'form-control', :placeholder => "パスワード" %>
+
+
+                    <%= f.submit 'プロフィール編集を完了する',class:'btn btn-primary' %>
+                  <% end %>
+                    <div class="col-md-4">
+                      <% if @user.errors.full_messages %>
+                        <% @user.errors.full_messages.each do |msg| %>
+                          <div class="alert alert-danger flash-text">
+                            <%= msg %>
+                          </div>
+                        <% end %>
+                      <% end %>
+                    </div>
+                </div>
+            </div>
